@@ -1,0 +1,6 @@
+SELECT u.membership_type, COUNT(DISTINCT r.user_guid) AS NumRatings
+FROM users u, reviews r
+WHERE u.user_guid=r.user_guid
+AND r.rating IS NOT NULL
+GROUP BY u.membership_type
+ORDER BY NumRatings DESC;
