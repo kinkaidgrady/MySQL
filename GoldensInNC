@@ -1,0 +1,5 @@
+SELECT DISTINCT d.dog_guid, d.user_guid, u.user_guid, u.state, d.breed
+FROM dogs d, users u
+WHERE d.user_guid = u.user_guid
+AND State="NC"
+AND breed="Golden Retriever";
