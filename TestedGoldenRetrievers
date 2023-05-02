@@ -1,0 +1,5 @@
+SELECT DISTINCT d.user_guid AS UserID, u.membership_type, d.dog_guid AS DogID, d.breed 
+FROM dogs d, complete_tests c, users u 
+WHERE d.dog_guid=c.dog_guid 
+AND d.user_guid=u.user_guid   
+AND d.breed="golden retriever";
