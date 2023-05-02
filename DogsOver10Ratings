@@ -1,0 +1,8 @@
+SELECT d.dog_guid AS DogID, d.user_guid AS UserID, AVG(r.rating) AS AvgRating, 
+       COUNT(r.rating) AS NumRatings, d.breed, d.breed_group, d.breed_type
+FROM dogs d, reviews r
+WHERE d.dog_guid=r.dog_guid AND d.user_guid=r.user_guid
+GROUP BY UserID, DogID, d.breed, d.breed_group, d.breed_type
+HAVING NumRatings >= 10
+ORDER BY AvgRating DESC
+LIMIT 200;
